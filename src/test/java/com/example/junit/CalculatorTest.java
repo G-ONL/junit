@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class JunitApplicationTests {
+class CalculatorTest {
 
   //beforeAll
   //beforeEach
@@ -28,11 +28,11 @@ class JunitApplicationTests {
   Calculator calculator = new Calculator();
 
   @Nested
-  @DisplayName("Plus method")
+  @DisplayName("더하기 테스트")
   class PlusMethod {
     @Nested
     @DisplayName("더하는 숫자가 음수일 경우")
-    class Handle_Minus_Number {
+    class Handle_Plus_Number {
 
       @Test
       void return_sum_of_number() {
@@ -41,14 +41,22 @@ class JunitApplicationTests {
     }
   }
 
-  @Test
-  @DisplayName("계산기")
-  void contextLoads() {
+  @Nested
+  @DisplayName("빼기 테스트")
+  class MinusMethod {
 
-    Assertions.assertAll("계산기 더하기/빼기 테스트",
-        () -> Assertions.assertEquals(3,calculator.add(1,2)),
-        () -> Assertions.assertEquals(2,calculator.minus(3,1))
-    );
+    @Nested
+    @DisplayName("빼는 숫자가 음수일 경우")
+    class Handle_Minus_Number{
+
+    @Test
+    void return_minus_of_number() {
+        Assertions.assertAll("일반수 빼기",
+            () -> Assertions.assertEquals(1, calculator.minus(-1, -2)),
+            () -> Assertions.assertEquals(2, calculator.minus(3, 1))
+        );
+      }
+    }
   }
 
 }
