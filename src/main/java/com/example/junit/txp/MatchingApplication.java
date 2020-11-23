@@ -3,7 +3,7 @@ package com.example.junit.txp;
 import java.util.ArrayList;
 import java.util.List;
 
-public class matchingApplication {
+public class MatchingApplication {
 
   public List<Project> recommend(People people , ProjectPool projectPool){
     List<Project> recommendProjectList = new ArrayList<>();
@@ -24,7 +24,6 @@ public class matchingApplication {
   public Weight match(People people, Project project){
     int matchCount = 0;
     int check;
-
     for( Skill requireSkill : project.getRequiredSkill()){
       for( Skill hasSkill : people.getHasSkills()){
          if(requireSkill.getName().equals(hasSkill.getName())){
