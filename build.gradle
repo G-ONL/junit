@@ -28,6 +28,7 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation("org.junit.vintage:junit-vintage-engine"){
         exclude group: "org.hamcrest", module: "hamcrest-core"
+        //spring boot 2.4 부터 test에서 vintage를 제거 따로 설치해줘야함
     }
 }
 
