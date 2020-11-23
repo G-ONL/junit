@@ -8,13 +8,13 @@ import org.junit.jupiter.api.Test;
 
 public class ScoreTest {
 
-  private ScoreCollection scores = new ScoreCollection();
+  private ScoreCollection collection = new ScoreCollection();
 
   @Test
   public void scoreCollectionArithmeticMean(){
-    scores.add(()-> 5);
-    scores.add(()-> 7);
-    assertThat(scores.arithmeticMean(), equalTo(6));
+    collection.add(()-> 5);
+    collection.add(()-> 7);
+    assertThat(collection.arithmeticMean(), equalTo(6));
 
   }
 }
