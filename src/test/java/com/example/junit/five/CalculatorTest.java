@@ -1,13 +1,11 @@
-package com.example.junit;
+package com.example.junit.five;
 
 import com.example.junit.calculator.Calculator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
 class CalculatorTest {
 
   //beforeAll
