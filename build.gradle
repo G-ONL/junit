@@ -23,6 +23,11 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
+    //lombok은 동작 기능이라기 보다는 축약해서 사용하게 해주는 편리 기능이라
+    // 컴파일시에 원래 메서드를 생성하고 메서드에 대한 접근 제어자를 생성
+    // implementation 단계에서는 상주할 필요가 없기에 complie단계에서만 쓰고 소멸된다.
+
+    // 프로그램의 메모리 내에 적재되어있는 것은 implementation, runtimeOnly에 해당하는 값들
     runtimeOnly 'com.h2database:h2'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -30,6 +35,8 @@ dependencies {
         exclude group: "org.hamcrest", module: "hamcrest-core"
         //spring boot 2.4 부터 test에서 vintage를 제거 따로 설치해줘야함
     }
+    testAnnotationProcessor 'org.projectlombok:lombok' //@Slf4j 어노테이션 사용을 위해
+    testCompileOnly 'org.projectlombok:lombok' // lombok을 사용하기 위해
 }
 
 test {
