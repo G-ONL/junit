@@ -32,6 +32,7 @@ public class MatchingApplication {
            if( check > 2){
              matchCount--;
            }
+           break;
          }
       }
     }

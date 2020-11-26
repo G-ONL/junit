@@ -1,16 +1,15 @@
 package com.example.junit.five;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import com.example.junit.txp.Level;
 import com.example.junit.txp.MatchingApplication;
 import com.example.junit.txp.People;
 import com.example.junit.txp.Project;
 import com.example.junit.txp.ProjectPool;
 import com.example.junit.txp.Skill;
-import static org.junit.jupiter.api.Assertions.*;
-
 import com.example.junit.txp.Weight;
 import java.util.Arrays;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -24,11 +23,8 @@ public class matchingTest {
 
   MatchingApplication matchingApplication = new MatchingApplication();
 
-  //BeforeAll 같은 경우는 static 해야 함.
-  //method가 실행되기 이전에 실행이 됨.
-
   @BeforeEach
-  void init(){
+  void init() {
     people = new People("홍길동");
     people.add(new Skill("Java", Level.PROFESSIONAL));
     people.add(new Skill("Spring Boot", Level.PROFESSIONAL));
@@ -89,7 +85,8 @@ public class matchingTest {
 
   @Test
   void recommendMatchingProject() {
-    assertEquals(matchingApplication.recommend(people, projectPool), Arrays.asList(perfectMatchProject));
+    assertEquals(matchingApplication.recommend(people, projectPool),
+        Arrays.asList(perfectMatchProject));
   }
 
 }
