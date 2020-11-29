@@ -16,6 +16,15 @@ Junit 사용해보기
 #### @AfterClass
  - 모든 테스트가 끝난 후 한 번 실행이 됩니다. 메서드가 static 이어야 한다.
  
+#### 단언
+ - assertTrue, assertThat, 
+ 
+#### 예외를 검증하는 3가지 방법
+- @Test(expected= ~~~.class)
+- try/catch + fail
+- @Rule을 이용한 방식
+  
+ 
  ### Junit 5
  
  #### @BeforeAll
@@ -29,6 +38,7 @@ Junit 사용해보기
  
  #### @AfterAll
   - Junit 4의 @AfterClass 처럼 현재 클래스의 모든 테스트 클래스가 끝나고 난 뒤에 실행이 되며 @BeforeAll과 동일하게 static이어야 한다.
+  
   
     
   
